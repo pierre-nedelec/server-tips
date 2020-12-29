@@ -1,0 +1,6 @@
+# Use * to easily access any server with a similar name
+
+Host *.radiology.ucsf.edu
+  User pnedelec
+  IdentityFile ~/.ssh/laptop_to_rad
+  
