@@ -13,10 +13,23 @@ Here are some server/ML tips I gathered along the way.
 ## Server use
 
 ### Connection
+#### Local desktop to remote
 Set up SSH keys and configure your local computer to easily access servers!
 * SSH keys: https://wynton.ucsf.edu/hpc/howto/log-in-without-pwd.html
 * Computer setup: `~/.ssh/config`, see [sample file](local_ssh_config).
 Then, simply connect via `ssh your_server`, without username or password!
+
+#### Intra server connection
+If you need to connect from one remote computer to another on the same server (sharing `$HOME`), do the following from the login host:
+```sh
+# Create a ssh key-pair if not already existing (e.g. `id_rsa`)
+ssh-keygen -t rsa
+
+# Add the login host to authorized_hosts where dev1 is one of the host you'd like to connect to.
+cat .ssh/id_rsa.pub | ssh dev1 'cat >> .ssh/authorized_keys'
+```
+There is no need to repeat the same operation for any other hosts!
+
 
 ### Install zsh without root access
 
