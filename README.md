@@ -30,6 +30,16 @@ cat .ssh/id_rsa.pub | ssh dev1 'cat >> .ssh/authorized_keys'
 ```
 There is no need to repeat the same operation for any other hosts!
 
+#### Tunnels
+If one server is only accessible after connecting to a login node, add a tunnel to your `.ssh/config` [file](local_ssh_config):
+```
+Host dev_server
+  HostName dev_server_ip
+  ProxyJump login.server.ip
+  IdentityFile ~/.ssh/laptop_to_loginnode
+  User USER
+```
+This will also allow the use of `vscode` or other software. Then the remote server is accessible seemlessly from your local computer with `ssh dev_server`.
 
 ### Install zsh without root access
 
