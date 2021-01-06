@@ -53,6 +53,9 @@ Host dev_server
 This will also allow the use of `vscode` or other software. Then the remote server is accessible seemlessly from your local computer with `ssh dev_server`.
 
 ### Install zsh without root access
+#### Install
+The steps are highlighted in [zsh_install.sh](zsh_install.sh). This solution is inspired by [this article](https://www.drewsilcock.co.uk/compiling-zsh).
+
 #### Configuration
 To start zsh automatically, add the following to your `~/.bash_profile`:
 ```sh
