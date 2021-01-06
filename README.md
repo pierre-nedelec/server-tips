@@ -60,7 +60,7 @@ To use a single collection of R packages shared across users, save the packages 
 # Define shared R library path at the user level
 R_LIBS_USER = /group/R_libraries
 ```
-Check that it worked by running `.libPaths()` in a R terminal.
+Check that it worked by running `.libPaths()` in a R terminal. New packages will be installed there by default.
 
 
 ### Install zsh without root access
