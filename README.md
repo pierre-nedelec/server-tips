@@ -57,7 +57,7 @@ This will also allow the use of `vscode` or other software. Then the remote serv
 The steps are highlighted in [zsh_install.sh](zsh_install.sh). This solution is inspired by [this article](https://www.drewsilcock.co.uk/compiling-zsh).
 
 #### Configuration
-To start zsh automatically, add the following to your `~/.bash_profile`:
+To start zsh automatically, add the following to your `~/.bash_profile`, or if it exists `~/.bashrc`:
 ```sh
 export SHELL=$HOME/.local/bin/zsh #/usr/bin/zsh
 exec $SHELL -l
