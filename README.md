@@ -52,6 +52,17 @@ Host dev_server
 ```
 This will also allow the use of `vscode` or other software. Then the remote server is accessible seemlessly from your local computer with `ssh dev_server`.
 
+### Collaborating on the servers
+#### R packages
+To use a single collection of R packages shared across users, save the packages to a location accessible to all (e.g. `/group/R_libraries`). Then, create `~/.Renviron` in your home directory.
+```
+# .Renviron
+# Define shared R library path at the user level
+R_LIBS_USER = /group/R_libraries
+```
+Check that it worked by running `.libPaths()` in a R terminal.
+
+
 ### Install zsh without root access
 #### Install
 The steps are highlighted in [zsh_install.sh](zsh_install.sh). This solution is inspired by [this article](https://www.drewsilcock.co.uk/compiling-zsh).
