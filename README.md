@@ -7,8 +7,19 @@ Here are some server/ML tips I gathered along the way.
 ## Terminal tips
 
 ### ZSH
-
-### Oh-My-Zsh and p10k
+#### Installation
+zsh is installed by default on many computers. Try typing `zsh` in the terminal, and it should launch it.  
+For details on how to install zsh without root access (for example on a server), see [Install zsh without root access](#Install-zsh-without-root-access)
+#### Oh-My-Zsh
+The installation is simple, once zsh is installed:
+```sh
+curl -L http://install.ohmyz.sh | sh
+```
+#### p10k
+```sh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k\n
+```
+The next time zsh is started, the command prompt will ask you to configure p10k interactively. If you want to reuse a previously made configuration, replace the `.p10k.zsh` file in your home directory, after running the configuration wizzard once.
 
 ## Server use
 
@@ -42,6 +53,13 @@ Host dev_server
 This will also allow the use of `vscode` or other software. Then the remote server is accessible seemlessly from your local computer with `ssh dev_server`.
 
 ### Install zsh without root access
+#### Configuration
+To start zsh automatically, add the following to your `~/.bash_profile`:
+```sh
+export SHELL=$HOME/.local/bin/zsh #/usr/bin/zsh
+exec $SHELL -l
+```
+For p10k configuration, see [p10k](#p10k)
 
 
 ## Containers
