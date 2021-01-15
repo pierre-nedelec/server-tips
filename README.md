@@ -1,27 +1,27 @@
-# A journey through UCSF
-
-I joined UCSF in 2020, as part as a research lab in the Radiology and Biomedical Imaging department, focusing on brain research.
-
-Here are some server/ML tips I gathered along the way.
-
-## Terminal tips
-
-### ZSH
-#### Installation
-zsh is installed by default on many computers. Try typing `zsh` in the terminal, and it should launch it.  
-For details on how to install zsh without root access (for example on a server), see [Install zsh without root access](#Install-zsh-without-root-access)
-#### Oh-My-Zsh
-The installation is simple, once zsh is installed:
-```sh
-curl -L http://install.ohmyz.sh | sh
-```
-#### p10k
-```sh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k\n
-```
-The next time zsh is started, the command prompt will ask you to configure p10k interactively. If you want to reuse a previously made configuration, replace the `.p10k.zsh` file in your home directory, after running the configuration wizzard once.
-
-## Server use
+# Server & Terminal tips
+  * [Server tips](#server-tips)
+    + [Connection](#connection)
+      - [Local desktop to remote](#local-desktop-to-remote)
+      - [Intra server connection](#intra-server-connection)
+      - [Tunnels](#tunnels)
+    + [Collaborating on the servers](#collaborating-on-the-servers)
+      - [R packages](#r-packages)
+    + [Install zsh without root access](#install-zsh-without-root-access)
+      - [Install](#install)
+      - [Configuration](#configuration)
+  * [Terminal tips](#terminal-tips)
+    + [ZSH](#zsh)
+      - [Installation](#installation)
+      - [Oh-My-Zsh](#oh-my-zsh)
+      - [p10k](#p10k)
+  * [Containers](#containers)
+    + [Docker](#docker)
+      - [DockerHub](#dockerhub)
+    + [VS Code and Docker](#vs-code-and-docker)
+    + [Singularity and Docker](#singularity-and-docker)
+  * [Git](#git)
+ 
+## Server tips
 
 ### Connection
 #### Local desktop to remote
@@ -75,6 +75,22 @@ exec $SHELL -l
 ```
 For p10k configuration, see [p10k](#p10k)
 
+## Terminal tips
+
+### ZSH
+#### Installation
+zsh is installed by default on many computers. Try typing `zsh` in the terminal, and it should launch it.  
+For details on how to install zsh without root access (for example on a server), see [Install zsh without root access](#Install-zsh-without-root-access)
+#### Oh-My-Zsh
+The installation is simple, once zsh is installed:
+```sh
+curl -L http://install.ohmyz.sh | sh
+```
+#### p10k
+```sh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k\n
+```
+The next time zsh is started, the command prompt will ask you to configure p10k interactively. If you want to reuse a previously made configuration, replace the `.p10k.zsh` file in your home directory, after running the configuration wizzard once.
 
 ## Containers
 ### Docker
