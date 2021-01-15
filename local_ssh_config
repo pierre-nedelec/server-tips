@@ -1,11 +1,11 @@
 # Use * to easily access any server with a similar name
 
 Host *.radiology.ucsf.edu
-  User pnedelec
+  User username
   IdentityFile ~/.ssh/laptop_to_rad
   
 Host *.wynton.ucsf.edu
-  User pnedelec
+  User username
   IdentityFile ~/.ssh/laptop_to_wynton
 
 # Tunnel ssh connection to second server
@@ -13,4 +13,4 @@ Host dev2
   HostName dev2
   ProxyJump log1.wynton.ucsf.edu
   IdentityFile ~/.ssh/laptop_to_wynton
-  User pnedelec
+  User username
