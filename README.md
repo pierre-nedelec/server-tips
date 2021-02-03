@@ -4,6 +4,7 @@
       - [Local desktop to remote](#local-desktop-to-remote)
       - [Intra server connection](#intra-server-connection)
       - [Tunnels](#tunnels)
+    + [VS Code](#vs-code)
     + [Collaborating on the servers](#collaborating-on-the-servers)
       - [R packages](#r-packages)
     + [Install zsh without root access](#install-zsh-without-root-access)
@@ -51,6 +52,15 @@ Host dev_server
   User USER
 ```
 This will also allow the use of `vscode` or other software. Then the remote server is accessible seemlessly from your local computer with `ssh dev_server`.
+
+### VS Code
+[Visual Studio Code](https://code.visualstudio.com/) is a free code editor. It is pretty simple to start using it and it works great with ssh servers.
+
+Once the ssh keys are in place, vscode can seamlessly connect to the server, and edit code as if it was on your local machine.
+1. Download [VS Code](https://code.visualstudio.com/download)
+2. In the left side bar, under 'Extensions', install the [SSH Extension](vscode:extension/ms-vscode-remote.remote-ssh). More info [here](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh).
+3. Once installed, click on the extension (in the left bar), and choose the host. It will prompt you for the ssh key asociated with it the first time.
+4. Once in the server, click on 'Open folder...' to choose which folder to open!
 
 ### Collaborating on the servers
 #### R packages
