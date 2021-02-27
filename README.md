@@ -78,7 +78,7 @@ Check that it worked by running `.libPaths()` in a R terminal. New packages will
 The steps are highlighted in [zsh_install.sh](zsh_install.sh). This solution is inspired by [this article](https://www.drewsilcock.co.uk/compiling-zsh).
 
 #### Configuration
-To start zsh automatically, add the following to your `~/.bash_profile`, or if it exists `~/.bashrc`:
+To start zsh automatically, add the following to your `~/.bash_profile`:
 ```sh
 export SHELL=$HOME/.local/bin/zsh #/usr/bin/zsh
 exec $SHELL -l
