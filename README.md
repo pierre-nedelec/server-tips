@@ -2,8 +2,8 @@
   * [Server tips](#server-tips)
     + [Connection](#connection)
       - [Local desktop to remote](#local-desktop-to-remote)
-      - [Intra server connection](#intra-server-connection)
       - [Tunnels](#tunnels)
+      - [Intra server connection](#intra-server-connection)
     + [VS Code](#vs-code)
     + [Collaborating on the servers](#collaborating-on-the-servers)
       - [R packages](#r-packages)
@@ -27,20 +27,24 @@
 ### Connection
 #### Local desktop to remote
 Set up SSH keys and configure your local computer to easily access servers!
-* SSH keys: https://wynton.ucsf.edu/hpc/howto/log-in-without-pwd.html
-* Computer setup: `~/.ssh/config`, see [sample file](local_ssh_config).
-Then, simply connect via `ssh your_server`, without username or password!
+* Create SSH keys:  
+  An example to connect to Wynton ([source](https://wynton.ucsf.edu/hpc/howto/log-in-without-pwd.html))
+  ```sh
+  # Run the following lines in a terminal
+  cd ~/.ssh
+  ssh-keygen -f laptop_to_wynton
+  ssh-copy-id -i ~/.ssh/laptop_to_wynton.pub USERNAME@log2.wynton.ucsf.edu
+  ```
+* Create or modify the file `~/.ssh/config` (see [sample file](local_ssh_config)).  
+  Example:
+  ```
+  Host *.wynton.ucsf.edu
+    User USERNAME
+    IdentityFile ~/.ssh/laptop_to_wynton
+  ```
+* Then, simply connect via `ssh your_server`, without username or password!  
+  Example: `ssh log2.wynton.ucsf.edu`
 
-#### Intra server connection
-If you need to connect from one remote computer to another on the same server (sharing `$HOME`), do the following from the login host:
-```sh
-# Create a ssh key-pair if not already existing (e.g. `id_rsa`)
-ssh-keygen -t rsa
-
-# Add the login host to authorized_hosts where dev1 is one of the host you'd like to connect to.
-cat .ssh/id_rsa.pub | ssh dev1 'cat >> .ssh/authorized_keys'
-```
-There is no need to repeat the same operation for any other hosts!
 
 #### Tunnels
 If one server is only accessible after connecting to a login node, add a tunnel to your `.ssh/config` [file](local_ssh_config):
@@ -52,6 +56,18 @@ Host dev_server
   User USER
 ```
 This will also allow the use of `vscode` or other software. Then the remote server is accessible seemlessly from your local computer with `ssh dev_server`.
+
+
+#### Intra server connection
+If you need to connect from one remote computer to another on the same server (sharing `$HOME`), do the following from the login host:
+```sh
+# Create a ssh key-pair if not already existing (e.g. `id_rsa`)
+ssh-keygen -t rsa
+
+# Add the login host to authorized_hosts where dev1 is one of the host you'd like to connect to.
+cat .ssh/id_rsa.pub | ssh dev1 'cat >> .ssh/authorized_keys'
+```
+There is no need to repeat the same operation for any other hosts!
 
 ### VS Code
 [Visual Studio Code](https://code.visualstudio.com/) is a free code editor. It is pretty simple to start using it and it works great with ssh servers.
