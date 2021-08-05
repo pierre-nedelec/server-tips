@@ -147,5 +147,5 @@ ssh -vT git@hostname.  # e.g. git.ucsf.edu
                        # if it returns an error, problem with ssh key
                        # if a key already exists, then it must be in the ssh-agent
 eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/your_public_key
+ssh-add ~/.ssh/your_private_key
 ```
