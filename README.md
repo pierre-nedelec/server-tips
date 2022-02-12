@@ -78,6 +78,9 @@ Once the ssh keys are in place, vscode can seamlessly connect to the server, and
 3. Once installed, click on the extension (in the left bar), and choose the host. It will prompt you for the ssh key asociated with it the first time.
 4. Once in the server, click on 'Open folder...' to choose which folder to open!
 
+NB: for #3, if your host default terminal is not bash, it can lead to errors when VS Code is trying to connect. To solve that, open the settings (UI), search for `remote.SSH.remotePlatform` and add your host name with `linux` as value. Save, and retry connecting to the host.
+
+
 ### Collaborating on the servers
 #### R packages
 To use a single collection of R packages shared across users, save the packages to a location accessible to all (e.g. `/group/R_libraries`). Then, create `~/.Renviron` in your home directory.
