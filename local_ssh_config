@@ -9,8 +9,7 @@ Host *.wynton.ucsf.edu
   IdentityFile ~/.ssh/laptop_to_wynton
 
 # Tunnel ssh connection to second server
-Host dev2
-  HostName dev2
-  ProxyJump log1.wynton.ucsf.edu
+Host *dev?
+  ProxyJump plog1.wynton.ucsf.edu
   IdentityFile ~/.ssh/laptop_to_wynton
   User username
