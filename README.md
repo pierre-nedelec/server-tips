@@ -104,6 +104,25 @@ exec $SHELL -l
 ```
 For p10k configuration, see [p10k](#p10k)
 
+On some servers, it is not recommended to perform the `exec` above (start a new shell from the `.bash_profile`). To circumvent that, create a `~/.start_zsh` file with these two lines in it and run it manually after the connection has been opened.
+
+#### Use this install as default terminal in VS Code
+
+In your host settings ("Preferences: Open Remote Settings (JSON) (SSH: pdev1)", or `workbench.action.openRemoteSettingsFile`), add the following lines:
+```json
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "/wynton/protected/home/ci2/pnedelec/.start_zsh",
+      "icon": "terminal-linux"
+    },
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash",
+      "args": ["-l"]
+    }
+  }
+```
+
 ## Terminal tips
 
 ### ZSH
