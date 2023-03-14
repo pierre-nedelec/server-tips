@@ -13,3 +13,9 @@ Host *dev?
   ProxyJump plog1.wynton.ucsf.edu
   IdentityFile ~/.ssh/laptop_to_wynton
   User username
+  
+# Tunnel ssh connection to second server
+Host *dt?
+  ProxyJump plog1.wynton.ucsf.edu
+  IdentityFile ~/.ssh/laptop_to_wynton
+  User username
